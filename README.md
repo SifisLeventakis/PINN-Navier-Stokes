@@ -41,5 +41,8 @@ The standard lid-driven cavity problem contains mathematical singularities at th
 Instead of a "hard" jump from $0$ to $1$, we apply a weight $\lambda(x)$ that ramps the lid velocity contribution:  
 $$\lambda(x) = \max(0, 1 - 2|x - 0.5|)$$
 
+The modified loss for the top boundary is calculated as:  
+$$L_{top} = \frac{1}{N} \sum \lambda(x) \cdot \left( (u - 1)^2 + v^2 \right)$$
+
 
 
