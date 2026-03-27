@@ -44,5 +44,7 @@ $$\lambda(x) = \max(0, 1 - 2|x - 0.5|)$$
 The modified loss for the top boundary is calculated as:  
 $$L_{top} = \frac{1}{N} \sum \lambda(x) \cdot \left( (u - 1)^2 + v^2 \right)$$
 
+This is a way to tell the optimizer to care more about errors encountered close to the center of the top boundary and less close to the corners.
+
 
 
