@@ -13,3 +13,4 @@ $$\begin{aligned}
 u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} &= -\frac{\partial p}{\partial x} + \frac{1}{Re} \nabla^2 u \\
 u \frac{\partial v}{\partial x} + v \frac{\partial v}{\partial y} &= -\frac{\partial p}{\partial y} + \frac{1}{Re} \nabla^2 v
 \end{aligned}$$
+
