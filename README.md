@@ -8,7 +8,7 @@ The governing equations of this 2D flow are the continuity and momentum equation
 **Continuity Equation (mass conservation):**
 $$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
 
-**Momentum Equations (Momentum Conservation):**
+**Momentum Equations (Momentum Conservation):** \\
 
 $$u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} = -\frac{\partial p}{\partial x} + \frac{1}{Re} \nabla^2 u$$
 
