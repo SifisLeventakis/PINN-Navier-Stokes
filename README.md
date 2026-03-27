@@ -26,3 +26,4 @@ $$L_{total} = \omega_{pde} L_{physics} + \omega_{bc} L_{bc}$$
 
 
 
+
