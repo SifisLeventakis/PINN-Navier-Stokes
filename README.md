@@ -20,6 +20,9 @@ The computational domain of the problem is a unit square [0,1] x [0,1]. The boun
 * **Bottom wall:** $u(x,0) = 0$,  $v(x,0) = 0$
 * **Side walls:** $u(0,y) = 0$,  $v(0,y) = 0$ and $u(1,y) = 0$,  $v(1,y) = 0$
 
+The training objective is to minimize a composite loss function that balances the governing equations with the boundary conditions. This is defined as:  
+$$L_{total} = \omega_{pde} L_{physics} + \omega_{bc} L_{bc}$$
+
 
 
 
