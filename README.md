@@ -30,7 +30,7 @@ For the boundaries, we enforce the no-slip and lid-driven conditions at 1000 poi
 $$L_{bc} = \frac{1}{N_b} \sum_{j=1}^{N_b} \left( |u_j - u_{target}|^2 + |v_j - v_{target}|^2 \right)$$
 
 After trial and error below is the final setup of this study:  
-* **Neural network depth: 5
+* Neural network depth: 5
 
 
 
