@@ -11,3 +11,4 @@ $$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
 **Momentum Equations (momentum conservation):**
 $$u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} = -\frac{\partial p}{\partial x} + \frac{1}{Re} \nabla^2 u$$
 $$u \frac{\partial v}{\partial x} + v \frac{\partial v}{\partial y} = -\frac{\partial p}{\partial y} + \frac{1}{Re} \nabla^2 v$$
+
