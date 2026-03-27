@@ -16,9 +16,9 @@ $$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
 | **Y-Momentum** | $$u \frac{\partial v}{\partial x} + v \frac{\partial v}{\partial y} = -\frac{\partial p}{\partial y} + \frac{1}{Re} \nabla^2 v$$ |
 
 The computational domain of the problem is a unit square [0,1] x [0,1]. The boundary conditions of the four sides are:
-Top moving wall: u(x,1) = 1, v(x,1) = 0
-Bottom wall: u(x,0) = 0, v(x,0) = 0
-Side walls: u(0,y) = 0, v(0,y) = 0 & u(1,y) = 0, v(1,y) = 0
+* **Top moving wall:** $u(x,1) = 1, v(x,1) = 0$
+* **Bottom wall:** $u(x,0) = 0, v(x,0) = 0$
+* **Side walls:** $u(0,y) = 0, v(0,y) = 0$ and $u(1,y) = 0, v(1,y) = 0$
 
 
 
