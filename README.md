@@ -31,6 +31,12 @@ $$L_{bc} = \frac{1}{N_b} \sum_{j=1}^{N_b} \left( |u_j - u_{target}|^2 + |v_j - v
 
 After trial and error below is the final setup of this study:  
 * Neural network depth: 5
+* Neural network width: 64
+* Neural network activation function: tanh (infinetely differentiable, needed for second order derivatives)
+* Starting with Adam optimizer and continuing with L-BFGS to increase accuracy of the result. LBFG-S is a second order optimization algorithm, thus it can further reduce the loss.
+* We use a weight of 10 for the boundary loss compared to the physics loss (internal domain), since the network was found to struggle more with respecting the boundary conditions.
+
+The standard lid-driven cavity problem contains mathematical singularities at the upper corners $(0,1)$ and $(1,1)$, where the moving lid meets the stationary side walls. To prevent the PINN from attempting to minimize an infinite gradient—which leads to numerical instability, a spatial weighting function (Smoothing Filter) was applied to the top boundary loss.
 
 
 
