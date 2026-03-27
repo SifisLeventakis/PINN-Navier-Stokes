@@ -23,6 +23,9 @@ The computational domain of the problem is a unit square [0,1] x [0,1]. The boun
 The training objective is to minimize a composite loss function that balances the governing equations with the boundary conditions. This is defined as:  
 $$L_{total} = \omega_{pde} L_{physics} + \omega_{bc} L_{bc}$$
 
+For the internal domain, we define an MSE loss function for 10000 collocation points, that enforces the Navier-Stokes equations:  
+$$L_{physics} = \frac{1}{N_f} \sum_{i=1}^{N_f} \left( |f_{cont, i}|^2 + |f_{u, i}|^2 + |f_{v, i}|^2 \right)$$
+
 
 
 
