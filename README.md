@@ -26,6 +26,9 @@ $$L_{total} = \omega_{pde} L_{physics} + \omega_{bc} L_{bc}$$
 For the internal domain, we define an MSE loss function for 10000 collocation points, that enforces the Navier-Stokes equations:  
 $$L_{physics} = \frac{1}{N_f} \sum_{i=1}^{N_f} \left( |f_{cont, i}|^2 + |f_{u, i}|^2 + |f_{v, i}|^2 \right)$$
 
+For the boundaries, we enforce the no-slip and lid-driven conditions at 1000 points and the boundary loss is as follows:  
+$$L_{bc} = \frac{1}{N_b} \sum_{j=1}^{N_b} \left( |u_j - u_{target}|^2 + |v_j - v_{target}|^2 \right)$$
+
 
 
 
