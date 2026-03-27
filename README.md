@@ -5,8 +5,6 @@ This project implements a Physics-Informed Neural Network (PINN) to solve the 2D
 
 The governing equations of this 2D flow are the continuity and momentum equations in the x and y direction:
 
-The governing equations of this 2D flow are the continuity and momentum equations in the x and y direction:
-
 **Continuity Equation (mass conservation):**
 $$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
 
