@@ -12,10 +12,10 @@ $$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
 
 **Momentum Equations (Momentum Conservation):**
 
-$$\begin{aligned}
-u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} &= -\frac{\partial p}{\partial x} + \frac{1}{Re} \nabla^2 u \\[10pt]
-u \frac{\partial v}{\partial x} + v \frac{\partial v}{\partial y} &= -\frac{\partial p}{\partial y} + \frac{1}{Re} \nabla^2 v
-\end{aligned}$$
+| Direction | Equation |
+| :--- | :--- |
+| **X-Momentum** | $$u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} = -\frac{\partial p}{\partial x} + \frac{1}{Re} \nabla^2 u$$ |
+| **Y-Momentum** | $$u \frac{\partial v}{\partial x} + v \frac{\partial v}{\partial y} = -\frac{\partial p}{\partial y} + \frac{1}{Re} \nabla^2 v$$ |
 
 
 
