@@ -1,4 +1,6 @@
 # PINN for 2D Incompressible Navier–Stokes (Lid-Driven Cavity)
+
+## Problem Description
 This project implements a Physics-Informed Neural Network (PINN) to solve the 2D incompressible Navier–Stokes equations for the lid-driven cavity flow at Re = 100. The governing equations are embedded directly into the loss function using  automatic differentiation.
 
 ![Result](https://github.com/user-attachments/assets/ab2b75c9-4f33-473e-8bfa-88f42dea9f95)
@@ -29,6 +31,7 @@ $$L_{physics} = \frac{1}{N_f} \sum_{i=1}^{N_f} \left( |f_{cont, i}|^2 + |f_{u, i
 For the boundaries, we enforce the no-slip and lid-driven conditions at 1000 points and the boundary loss is as follows:  
 $$L_{bc} = \frac{1}{N_b} \sum_{j=1}^{N_b} \left( |u_j - u_{target}|^2 + |v_j - v_{target}|^2 \right)$$
 
+## Methodology
 After trial and error below is the final setup of this study:  
 * Neural network depth: 5
 * Neural network width: 64
@@ -46,5 +49,47 @@ $$L_{top} = \frac{1}{N} \sum \lambda(x) \cdot \left( (u - 1)^2 + v^2 \right)$$
 
 This is a way to tell the optimizer to care more about errors encountered close to the center of the top boundary and less close to the corners. This significantly decreased both the boundary and the physics losses by more than an order magnitude.
 
+## Results
+Below we can have insight on the results obtained. Starting with the different loss values, The loss decreases steadily during Adam training, with a significant additional drop upon switching to L-BFGS, demonstrating the benefit of the hybrid optimization strategy.
 
+<img width="1899" height="612" alt="image" src="https://github.com/user-attachments/assets/90109c81-1be5-4fcd-ae46-7d2ba9915bdb" />
+
+Below we can have insight on the results obtained. Starting with the loss history, the loss decreases steadily during Adam training, with a significant additional drop upon switching to L-BFGS, demonstrating the benefit of the hybrid optimization strategy.
+The velocity magnitude contour is depicted below, showing the expected qualitative behavior. The primary vortex is located at approximately (0.62, 0.74). To validate quantitatively, the vortex center was identified by minimizing the velocity magnitude. The predicted center was found at (0.6263, 0.7475), compared to the Ghia et al. (1982) benchmark value of (0.6172, 0.7344), corresponding to a distance error of 0.01591.
+
+<img width="803" height="786" alt="image" src="https://github.com/user-attachments/assets/d0f5a4fa-584d-4175-8dba-4922f385a742" />
+
+Another important finding is the fluid streamlines in the cavity illustrated below. These results agree well with the literature:
+* Smooth streamlines throughout the domain
+* Primary vortex agrees with benchmark results
+* Secondary vortices forming in the bottom left and right corners, as expected for Re=100 laminar flow
+
+<img width="823" height="813" alt="image" src="https://github.com/user-attachments/assets/f04c8e0a-d397-49cc-b7ac-7a2d2db32791" />
+
+To further validate the results, the u and v velocity components were extracted along the vertical and horizontal centerlines respectively, and compared against the Ghia et al. (1982) benchmark data. The u velocity profile shows excellent agreement with the reference solution along the entire vertical centerline (x=0.5). The v velocity profile captures the correct qualitative behavior but shows some discrepancy in the range x ∈ [0.15, 0.85], likely attributable to the corner singularities at the lid edges affecting the interior solution. The vorticity distribution along the moving lid also agrees well with the benchmark.
+
+<img width="788" height="1039" alt="image" src="https://github.com/user-attachments/assets/699cda3f-34e8-4fe2-a9f0-5bd768593304" />
+
+<img width="1092" height="813" alt="image" src="https://github.com/user-attachments/assets/aea6ed6a-8c73-4b9b-9368-4e0038f1d6c3" />
+
+<img width="1055" height="712" alt="image" src="https://github.com/user-attachments/assets/0c1d3a3c-857a-472d-b7d2-5783e1d968d2" />
+
+## Limitations & Future Work
+The current implementation solves the lid-driven cavity at a fixed Reynolds number (Re=100). Known limitations include:
+
+* Corner singularities at the lid edges introduce local errors in the boundary loss that affect the v velocity prediction in the interior
+* Training is computationally expensive compared to classical CFD solvers for a single Re case
+
+Future extensions planned:
+
+* Parametric PINN — add Re as an additional network input, enabling instant flow field prediction across Re=100 to Re=1000 without retraining
+* Adaptive sampling — concentrate collocation points in high-gradient regions (boundary layer, vortex core) to improve accuracy
+* Higher Re — extend to Re=400 and Re=1000 where secondary vortices are more pronounced
+
+
+## References
+
+Ghia, U., Ghia, K. N., & Shin, C. T. (1982). High-Re solutions for incompressible flow using the Navier-Stokes equations and a multigrid method. Journal of Computational Physics, 48(3), 387-411.  
+
+Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019). Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. Journal of Computational Physics, 378, 686-707.
 
