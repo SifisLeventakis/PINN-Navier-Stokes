@@ -57,22 +57,22 @@ Below we can have insight on the results obtained. Starting with the different l
 Below we can have insight on the results obtained. Starting with the loss history, the loss decreases steadily during Adam training, with a significant additional drop upon switching to L-BFGS, demonstrating the benefit of the hybrid optimization strategy.
 The velocity magnitude contour is depicted below, showing the expected qualitative behavior. The primary vortex is located at approximately (0.62, 0.74). To validate quantitatively, the vortex center was identified by minimizing the velocity magnitude. The predicted center was found at (0.6263, 0.7475), compared to the Ghia et al. (1982) benchmark value of (0.6172, 0.7344), corresponding to a distance error of 0.01591.
 
-<img width="803" height="786" alt="image" src="https://github.com/user-attachments/assets/d0f5a4fa-584d-4175-8dba-4922f385a742" />
+<img width="400" height="380" alt="image" src="https://github.com/user-attachments/assets/d0f5a4fa-584d-4175-8dba-4922f385a742" />
 
 Another important finding is the fluid streamlines in the cavity illustrated below. These results agree well with the literature:
 * Smooth streamlines throughout the domain
 * Primary vortex agrees with benchmark results
 * Secondary vortices forming in the bottom left and right corners, as expected for Re=100 laminar flow
 
-<img width="823" height="813" alt="image" src="https://github.com/user-attachments/assets/f04c8e0a-d397-49cc-b7ac-7a2d2db32791" />
+<img width="400" height="392" alt="image" src="https://github.com/user-attachments/assets/f04c8e0a-d397-49cc-b7ac-7a2d2db32791" />
 
 To further validate the results, the u and v velocity components were extracted along the vertical and horizontal centerlines respectively, and compared against the Ghia et al. (1982) benchmark data. The u velocity profile shows excellent agreement with the reference solution along the entire vertical centerline (x=0.5). The v velocity profile captures the correct qualitative behavior but shows some discrepancy in the range x ∈ [0.15, 0.85], likely attributable to the corner singularities at the lid edges affecting the interior solution. The vorticity distribution along the moving lid also agrees well with the benchmark.
 
-<img width="788" height="1039" alt="image" src="https://github.com/user-attachments/assets/699cda3f-34e8-4fe2-a9f0-5bd768593304" />
+<img width="400" height="600" alt="image" src="https://github.com/user-attachments/assets/699cda3f-34e8-4fe2-a9f0-5bd768593304" />
 
-<img width="1092" height="813" alt="image" src="https://github.com/user-attachments/assets/aea6ed6a-8c73-4b9b-9368-4e0038f1d6c3" />
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/aea6ed6a-8c73-4b9b-9368-4e0038f1d6c3" />
 
-<img width="1055" height="712" alt="image" src="https://github.com/user-attachments/assets/0c1d3a3c-857a-472d-b7d2-5783e1d968d2" />
+<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/0c1d3a3c-857a-472d-b7d2-5783e1d968d2" />
 
 ## Limitations & Future Work
 The current implementation solves the lid-driven cavity at a fixed Reynolds number (Re=100). Known limitations include:
