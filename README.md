@@ -1,6 +1,6 @@
 # PINN for 2D Incompressible Navier–Stokes (Lid-Driven Cavity)
-
 ## Problem Description
+<div align="justify">
 This project implements a Physics-Informed Neural Network (PINN) to solve the 2D incompressible Navier–Stokes equations for the lid-driven cavity flow at Re = 100. The governing equations are embedded directly into the loss function using  automatic differentiation.
 
 <img width="380" height="400" alt="Screenshot 2026-03-27 113406" src="https://github.com/user-attachments/assets/a80a073e-e984-41a4-8ee5-8ed18010e28d" />
@@ -82,9 +82,9 @@ The current implementation solves the lid-driven cavity at a fixed Reynolds numb
 
 Future extensions planned:
 
-* Parametric PINN — add Re as an additional network input, enabling instant flow field prediction across Re=100 to Re=1000 without retraining
-* Adaptive sampling — concentrate collocation points in high-gradient regions (boundary layer, vortex core) to improve accuracy
-* Higher Re — extend to Re=400 and Re=1000 where secondary vortices are more pronounced
+* Parametric PINN - add Re as an additional network input, enabling instant flow field prediction across Re=100 to Re=1000 without retraining
+* Adaptive sampling - concentrate collocation points in high-gradient regions (boundary layer, vortex core) to improve accuracy
+* Higher Re - extend to Re=400 and Re=1000 where secondary vortices are more pronounced
 
 
 ## References
@@ -93,3 +93,4 @@ Ghia, U., Ghia, K. N., & Shin, C. T. (1982). High-Re solutions for incompressibl
 
 Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019). Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. Journal of Computational Physics, 378, 686-707.
 
+</div>
