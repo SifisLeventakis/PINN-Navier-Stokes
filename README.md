@@ -3,7 +3,7 @@
 ## Problem Description
 This project implements a Physics-Informed Neural Network (PINN) to solve the 2D incompressible Navier–Stokes equations for the lid-driven cavity flow at Re = 100. The governing equations are embedded directly into the loss function using  automatic differentiation.
 
-![Result](https://github.com/user-attachments/assets/ab2b75c9-4f33-473e-8bfa-88f42dea9f95)
+<img width="380" height="400" alt="Screenshot 2026-03-27 113406" src="https://github.com/user-attachments/assets/a80a073e-e984-41a4-8ee5-8ed18010e28d" />
 
 The governing equations of this 2D flow are the continuity and momentum equations in the x and y direction:
 
